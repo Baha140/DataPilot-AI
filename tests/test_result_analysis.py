@@ -156,7 +156,7 @@ def main():
     test_multiple_numeric_columns()
     test_empty_result()
     test_real_gazole_data()
-    
+     
     print("\nTous les tests sont reussis !")
 
 
