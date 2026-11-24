@@ -1,0 +1,33 @@
+
+# Data manipulation
+pandas
+numpy
+openpyxl
+lxml
+
+# Database
+duckdb
+
+# Visualization
+plotly
+matplotlib
+
+# AI model
+ollama
+
+# MCP server
+fastmcp
+
+# Web interface
+streamlit
+
+# Utilities
+python-dotenv
+requests
+
+# Statistics and machine learning
+scipy
+scikit-learn
+
+# Testing
+pytest
