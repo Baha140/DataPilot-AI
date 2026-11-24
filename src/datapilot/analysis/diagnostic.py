@@ -33,6 +33,10 @@ def diagnose_table(table_name):
         f"DESCRIBE SELECT * FROM {table_name}"
     ).fetchdf()
 
+    column_types = columns[
+        ["column_name", "column_type"]
+    ].to_dict(orient="records")
+
     print(f"\nNombre de lignes : {total_rows:,}")
     print(f"Nombre de colonnes : {len(columns)}")
 
@@ -84,6 +88,8 @@ def diagnose_table(table_name):
         f"SELECT * FROM {table_name} LIMIT 5"
     ).fetchdf()
 
+    sample_records = sample.to_dict(orient="records")
+
     print(sample.to_string(index=False))
 
     connection.close()
@@ -92,8 +98,10 @@ def diagnose_table(table_name):
         "table": table_name,
         "total_rows": total_rows,
         "total_columns": len(columns),
+        "column_types": column_types,
         "missing_values": missing.to_dict(orient="records"),
-        "duplicate_groups": duplicate_count
+        "duplicate_groups": duplicate_count,
+        "sample": sample_records
     }
 
 
